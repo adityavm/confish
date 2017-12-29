@@ -1,1 +1,1 @@
-alias e "fasd -e "
+alias e "fasd -e subl "
