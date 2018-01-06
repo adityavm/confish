@@ -5,6 +5,7 @@ function fish_prompt
   set_color brblack
   echo -n (prompt_pwd)
   echo -n " · "
+  set_color normal
 end
 
 function fish_right_prompt
