@@ -5,7 +5,8 @@ function fish_greeting
 end
 
 function __dedup_history -e fish_preexec -d "disallow duplicates in history"
-  history delete -C --exact (history | head -1)
+  set -lx cmd (commandline)
+  history delete -C --exact $cmd
 end
 
 function __delete_error_command -e fish_postexec -d "delete command from history on error"

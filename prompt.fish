@@ -1,6 +1,11 @@
 function fish_prompt
+  set -lx error $status
   echo ""
-  set_color magenta
+  if test $error -ne 0
+    set_color red
+  else
+    set_color magenta
+  end
   echo -n "→ "
   set_color brblack
   echo -n (prompt_pwd)
