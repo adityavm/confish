@@ -1,8 +1,9 @@
 function fish_prompt
-  set -lx error $status
   echo ""
+  set -lx error $status
   if test $error -ne 0
     set_color red
+    history delete -C --exact (history | head -1) # remove last command if was an error
   else
     set_color magenta
   end
