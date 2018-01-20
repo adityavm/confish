@@ -1,6 +1,6 @@
 function fish_prompt
-  echo ""
   set -lx error $status
+  echo ""
   if test $error -ne 0
     set_color red
     history delete -C --exact (history | head -1) # remove last command if was an error
