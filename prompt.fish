@@ -3,7 +3,6 @@ function fish_prompt
   echo ""
   if test $error -ne 0
     set_color red
-    history delete -C --exact (history | head -1) # remove last command if was an error
   else
     set_color magenta
   end
@@ -16,7 +15,7 @@ end
 
 function fish_right_prompt
   if test -d .git
-    set_color yellow
+    set_color bryellow
     echo (git_current_branch)
     set_color normal
 
