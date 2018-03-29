@@ -4,10 +4,10 @@ function fish_greeting
   echo -n ""
 end
 
-# function __dedup_history -e fish_preexec -d "disallow duplicates"
-#   set -l cmd $argv[1]
-#   history delete -C --exact $cmd
-# end
+function __dedup_history -e fish_preexec -d "disallow duplicates"
+  set -l cmd (commandline)
+  history delete -C --exact $cmd
+end
 
 function __process_last_cmd -e fish_postexec -d "replay command on error"
   set -l error $status
