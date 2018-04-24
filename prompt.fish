@@ -4,7 +4,7 @@ function fish_prompt
   if test $error -ne 0
     set_color red
   else
-    set_color magenta
+    set_color blue
   end
   echo -n "→ "
   set_color brblack
@@ -15,6 +15,12 @@ end
 
 function fish_right_prompt
   if test -d .git
+    if test (git_parse_dirty)
+      set_color red
+    else
+      set_color green
+    end
+    echo " "
     set_color bryellow
     echo (git_current_branch)
     set_color normal
@@ -26,10 +32,6 @@ function fish_right_prompt
       echo (git_lines_added)
       set_color red
       echo (git_lines_removed)
-      set_color normal
-    else
-      set_color green
-      echo " ⚑"
       set_color normal
     end
   end
