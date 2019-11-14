@@ -16,7 +16,7 @@ end
 function fish_right_prompt
   if test -d .git
     if test (git_parse_dirty)
-      set_color red
+      set_color brblack
     else
       set_color green
     end
