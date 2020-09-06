@@ -38,6 +38,21 @@ end
 function get_branches_with_descriptions
   while read -l i
     set -l trimmed (echo $i | sed -e 's/[^a-zA-Z0-9\/_-]//g') # https://trigonakis.com/blog/2011/07/28/pattern-matching-hyphen-minus-sign-in-bash/
-    printf "%-40s %s %s %s\n" $i (set_color yellow) (get_branch_description $trimmed) (set_color normal)
+    printf "%-20s %s %s %s\n" $i (set_color yellow) (get_branch_description $trimmed) (set_color normal)
+  end
+end
+
+# Open a branch for editing
+function git_edit_branch
+  set -l editor "code"
+  git fetch origin; and git checkout $argv; and $editor .
+end
+
+# Copy the current branch name
+function gcpy
+  set -l branchname (git branch | grep \* | cut -d ' ' -f2)
+  echo $branchname | pbcopy
+  if test -n "$branchname"
+    echo "Copied `$branchname`"
   end
 end

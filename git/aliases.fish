@@ -132,3 +132,10 @@
  alias gwch 'git whatchanged -p --abbrev-commit --pretty medium'
  alias gwip 'git add -A; git rm (git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
  alias gdesc 'get_branches_with_descriptions'
+ abbr gdr 'git recent | gdesc'
+ abbr gdb 'git branch --list | gdesc'
+ abbr ge "git_edit_branch"
+ alias gpr "hub pull-request"
+ abbr gwa "git worktree add"
+ abbr gwd "git worktree remove"
+ abbr gwl "git worktree list"

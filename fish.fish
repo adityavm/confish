@@ -17,11 +17,3 @@ function __process_last_cmd -e fish_postexec -d "replay command on error"
     history delete -C --exact $cmd
   end
 end
-
-function gcpy
-  set -l branchname (git branch | grep \* | cut -d ' ' -f2)
-  echo $branchname | pbcopy
-  if test -n "$branchname"
-    echo "Copied `$branchname`"
-  end
-end
