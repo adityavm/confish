@@ -2,6 +2,7 @@ yabai -m space 1 --label a
 yabai -m space 2 --label d
 yabai -m space 3 --label w
 yabai -m space 4 --label c
+yabai -m space 5 --label t
 
 yabai -m config layout bsp
 yabai -m config --space 1 layout float
@@ -12,7 +13,7 @@ yabai -m config external_bar all:10:60
 yabai -m config window_gap 5
 
 yabai -m config window_border on
-yabai -m config window_border_width 2
+yabai -m config window_border_width 3
 yabai -m config active_window_border_color 0xffff6188
 yabai -m config normal_window_border_color 0x00ffffff
 
@@ -20,5 +21,7 @@ yabai -m rule --add app="Spark" native-fullscreen=on
 yabai -m rule --add app="Slack" space="c"
 yabai -m rule --add app="Firefox" space="w"
 yabai -m rule --add app="Firefox Developer Edition" space="d"
-yabai -m rule --add app="iTerm2" space="d"
+yabai -m rule --add title="Developer Tools" manage=off
+yabai -m rule --add app="iTerm2" manage=off
 yabai -m rule --add app="Code" native-fullscreen=on
+yabai -m rule --add app="Trillium" native-fullscreen=on space="t"

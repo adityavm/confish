@@ -1,3 +1,11 @@
 set basedir (dirname (status -f))
-ln -s $basedir/.yabairc /Users/aditya/.yabairc
-ln -s $basedir/.skhdrc /Users/aditya/.skhdrc
+
+if test -e ~/.yabairc;
+else
+  ln -s $basedir/.yabairc ~/.yabairc
+end
+
+if test -e ~/.skhdrc;
+else
+  ln -s $basedir/.skhdrc ~/.skhdrc
+end

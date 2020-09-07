@@ -1,12 +1,12 @@
-cmd + ctrl - h : yabai -m window --focus north
-cmd + ctrl - l : yabai -m window --focus south
-cmd + ctrl - k : yabai -m window --focus east
-cmd + ctrl - j : yabai -m window --focus west
+cmd + ctrl - h : yabai -m window --focus west
+cmd + ctrl - l : yabai -m window --focus east
+cmd + ctrl - k : yabai -m window --focus north
+cmd + ctrl - j : yabai -m window --focus south
 cmd + ctrl - a : yabai -m space --focus a
 cmd + ctrl - d : yabai -m space --focus d
 cmd + ctrl - c : yabai -m space --focus c
 cmd + ctrl - w : yabai -m space --focus w
-cmd + ctrl - 5 : yabai -m space --focus 5
+cmd + ctrl - t : yabai -m space --focus t
 cmd + ctrl - 6 : yabai -m space --focus 6
 cmd + ctrl - 7 : yabai -m space --focus 7
 cmd + ctrl - 8 : yabai -m space --focus 8
@@ -23,7 +23,15 @@ cmd + ctrl + alt - down : yabai -m window --resize bottom:0:-20
 
 cmd + ctrl - m : yabai -m window --space next
 cmd + ctrl - n : yabai -m window --space prev
+cmd + ctrl + shift - n : yabai -m space --focus prev
+cmd + ctrl + shift - m : yabai -m space --focus next
 cmd + ctrl + alt - n : yabai -m space --create
 cmd + ctrl + alt - m : yabai -m space --destroy
+cmd + ctrl + alt - a : yabai -m window --space a
+cmd + ctrl + alt - w : yabai -m window --space w
+cmd + ctrl + alt - 6 : yabai -m window --space 6
+cmd + ctrl + alt - 7 : yabai -m window --space 7
+cmd + ctrl + alt - 8 : yabai -m window --space 8
+cmd + ctrl + alt - 9 : yabai -m window --space 9
 
 cmd + ctrl - return : yabai -m window --toggle float
