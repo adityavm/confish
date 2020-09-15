@@ -17,6 +17,10 @@ cmd + ctrl - c                            : yabai -m window --focus (yabai -m qu
 cmd + ctrl - s                            : yabai -m window --focus (yabai -m query --windows | jq '.[] | select(.app=="Slack") | .id')
 cmd + ctrl - w                            : yabai -m window --focus (yabai -m query --windows | jq '.[] | select(.app=="Firefox") | .id')
 cmd + ctrl - n                            : yabai -m window --focus (yabai -m query --windows | jq '.[] | select(.app=="trilium") | .id')
+cmd + ctrl - 0x18                         : yabai -m window --swap next
+cmd + ctrl - 0x1B                         : yabai -m window --swap prev
+cmd + ctrl + shift - 0x18                 : yabai -m window --swap largest
+cmd + ctrl + shift - 0x1B                 : yabai -m window --swap smallest
 
 cmd + ctrl - 0x29                         : yabai -m window --resize left:-20:0
 cmd + ctrl + shift - 0x29                 : yabai -m window --resize left:20:0
@@ -47,7 +51,9 @@ cmd + ctrl + shift - f                    : yabai -m window --toggle float ; \
 cmd + ctrl + shift - s                    : yabai -m window --toggle float ; \
                                             yabai -m window space all ; \
                                             yabai -m window --grid 8:8:1:1:6:6
-cmd + ctrl + shift - o                    : yabai -m space --layout (yabai -m query --spaces | jq -r '.[] |  select(.focused == 1) | if .type == "bsp" then "stack" else "bsp" end')
+cmd + ctrl + shift - o                    : yabai -m space --layout (yabai -m query --spaces | jq -r '.[] | select(.focused == 1) | if .type == "bsp" then "stack" else "bsp" end')
+
+cmd + ctrl - 0x2A                         : toggle_dnd
 
 # todo
 # keybinds to move between windows in stacked space

@@ -1,10 +1,9 @@
 yabai -m config layout bsp
-yabai -m config --space 1 layout float
-
 yabai -m config left_padding 10
 yabai -m config right_padding 10
 yabai -m config external_bar all:10:60
-yabai -m config window_gap 5
+yabai -m config window_gap 7
+yabai -m config auto_balance on
 
 yabai -m config window_border on
 yabai -m config window_border_width 3
@@ -13,15 +12,16 @@ yabai -m config normal_window_border_color 0x00ffffff
 
 yabai -m rule --add app="Spark" manage=off border=off
 yabai -m rule --add app="Firefox" title="^Opening" manage=off border=off
-yabai -m rule --add app="Firefox Developer Edition"
 yabai -m rule --add app="Firefox Developer Edition" title="^Opening" manage=off border=off
 yabai -m rule --add title="Developer Tools" manage=off
-yabai -m rule --add app="iTerm2" manage=off
 yabai -m rule --add app="Code" native-fullscreen=on border=off
 yabai -m rule --add app="trilium" native-fullscreen=on border=off
 
-yabai -m signal --add event=display_added action="osascript -e 'tell application \"Übersicht\" to refresh'"
-yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh'"
-yabai -m signal --add event=display_removed action="osascript -e 'tell application \"Übersicht\" to refresh'"
-yabai -m signal --add event=application_activated app="Code" \
-  action="~/dev/confish/yabai.sh"
+yabai -m signal --add event=display_added action="osascript -e 'tell application \"Übersicht\" to refresh'"
+yabai -m signal --add event=display_removed action="osascript -e 'tell application \"Übersicht\" to refresh'"
+
+yabai -m signal --add event="window_title_changed" action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-jsx\"' && osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-2-jsx\"'"
+
+yabai -m signal --add event="application_front_switched" action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-jsx\"' && osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-2-jsx\"'"
+
+yabai -m signal --add event="window_focused" action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-jsx\"' && osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-2-jsx\"'"
