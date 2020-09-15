@@ -43,7 +43,7 @@ cmd + shift + ctrl - 7                    : yabai -m window --space 7
 cmd + shift + ctrl - 8                    : yabai -m window --space 8
 cmd + shift + ctrl - 9                    : yabai -m window --space 9
 
-cmd + ctrl + shift - n                    : yabai -m space --create
+cmd + ctrl + shift - n                    : yabai -m space --create && yabai -m space --focus (yabai -m query --spaces | jq 'sort_by(.id) | .[-1].index') && osascript -e 'tell application "Übersicht" to refresh'
 cmd + ctrl + shift - m                    : yabai -m space --destroy
 
 cmd + ctrl + shift - f                    : yabai -m window --toggle float ; \
