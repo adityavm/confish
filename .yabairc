@@ -1,13 +1,13 @@
 yabai -m config layout bsp
 yabai -m config left_padding 10
 yabai -m config right_padding 10
-yabai -m config external_bar all:10:60
+yabai -m config external_bar all:45:45
 yabai -m config window_gap 7
 yabai -m config auto_balance on
 
 yabai -m config window_border on
 yabai -m config window_border_width 3
-yabai -m config active_window_border_color 0xffff6188
+yabai -m config active_window_border_color 0xffb79dc4
 yabai -m config normal_window_border_color 0x00ffffff
 
 yabai -m rule --add app="Spark" manage=off border=off
@@ -25,3 +25,5 @@ yabai -m signal --add event="window_title_changed" action="osascript -e 'tell ap
 yabai -m signal --add event="application_front_switched" action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-jsx\"' && osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-2-jsx\"'"
 
 yabai -m signal --add event="window_focused" action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-jsx\"' && osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-2-jsx\"'"
+
+yabai -m signal --add event="application_deactivated" action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-jsx\"' && osascript -e 'tell application \"Übersicht\" to refresh widget id \"activeWindow-2-jsx\"'"
